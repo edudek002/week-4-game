@@ -1,3 +1,6 @@
+
+
+
 var counter=0; 
 
     //create a large random number 19-120
@@ -37,7 +40,7 @@ var counter=0;
 
       imageGem[i] = $("<img>");
       imageGem[i].addClass("gem-image");
-      var color = ["gemstoneBlue.jpg", "gemstoneGreen.jpg", "gemstoneRed.jpg", "gemstoneYellow.jpg"];
+      var color = ["assets/images/gemstoneBlue.jpg", "assets/images/gemstoneGreen.jpg", "assets/images/gemstoneRed.jpg", "assets/images/gemstoneYellow.jpg"];
       imageGem[i].attr("src", color[i]);
       imageGem[i].attr("data-gemvalue", randomSm[i]);
       $("#gems").append(imageGem[i]);

@@ -12,8 +12,6 @@
   </style>
 
 
-  <link rel="stylesheet" type="text/javascript" href="assets/javascript/game.js">
-
 </head>
 <body>
 
@@ -33,23 +31,37 @@
   <!-- ========================================= -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+
+  <script type="text/javascript" src="assets/javascript/gameObject.js"></script>
+
   <script>
 
   //needs to be updated for gems game  
 
 
-  var words = ["jenniferl", "beyonce","adele"];
-  var currentGame;
-
-  document.onkeyup = function() {
-  currentGame = new Hangman(words);
-  currentGame.setRandomWord();
   
-  console.log(currentGame.dashes);
+    
+    var Max=120;
+    var Min=19;
+    var numberLg =Math.floor(Math.random() * (Max - Min + 1)) + Min
 
-  document.getElementById("numChar").innerHTML = currentGame.dashes.join('');
-  };
+    var max=12;
+    var min=1;
+    var numberSm =Math.floor(Math.random() * (max - min + 1)) + min;
 
+    var newGemsLg = new Gems(numberLg);
+    newGemsLg.setRandomLg();
+
+    var newGemsSm = new Gems(numberSm);
+    newGemsSm.setRandomSm();
+
+    var newGemsImage = new Gems(imageGem);
+    newGemsImage.setGems();
+
+
+    console.log("HTML Random number = " + newGemsLg.numberLg);
+
+    console.log("HTML Random number = " + newGemsSm.numberSm);
 
 
   </script>
