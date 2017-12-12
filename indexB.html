@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>simple crystal game</title>
+  
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+ 
+</head>
+<body>
+
+  <h1>Number to Guess: <span id="random-numberLg"></span></h1>
+
+  <!-- Note that this div is now empty. We will fill it dynamically -->
+  <div id="gems">
+  </div>
+
+  <br>
+  <h2>Your total score is: <span id="total-number"></span></h2>
+
+  
+
+
+  <!-- JAVASCRIPT  -->
+  <!-- ========================================= -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <!--<script type="text/javascript" src="assets/javascript/game.js"></script>-->
+
+  
+
+  <script>
+
+  //needs to be updated for gems game  
+
+  var counter=0; 
+
+    //create a large random number 19-120
+
+    var Min =19;
+    var Max =120;
+    var randomLg =0;
+    var min =1;
+    var max =12;
+    var randomSm = [0,0,0,0];
+    var imageGem=[];
+    var counter;
+
+
+    function startGame() {
+
+    // create a large random number 19-120 for different crystals
+    randomLg =0;
+    counter =0;
+
+
+    randomLg =Math.floor(Math.random() * (Max - Min + 1)) + Min;
+    $("#random-numberLg").text(randomLg);
+    $("#total-number").text(this.counter);
+
+    // create a small random number 1-12 for different crystals
+
+    for (var i = 0; i <4; i++) {
+      randomSm[i] =Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomSm[i]);
+      };
+
+    }
+    startGame();
+    
+    for (var i = 0; i < randomSm.length; i++) {
+
+      imageGem[i] = $("<img>");
+      imageGem[i].addClass("gem-image");
+      var color = ["assets/images/gemstoneBlue.jpg", "assets/images/gemstoneGreen.jpg", "assets/images/gemstoneRed.jpg", "assets/images/gemstoneYellow.jpg"];
+      imageGem[i].attr("src", color[i]);
+      imageGem[i].attr("data-gemvalue", randomSm[i]);
+      $("#gems").append(imageGem[i]);
+    };
+
+  
+
+
+
+    $(".gem-image").on("click", function() {
+      
+      var gemValue = ($(this).attr("data-gemvalue"));
+      alert("you guessed: " + gemValue);
+      gemValue = parseInt(gemValue);
+      counter += gemValue;
+
+      $("#total-number").text(counter);
+
+      if (counter === randomLg) {
+        alert("You win!");
+        //start new game
+        startGame();
+      }
+      else if (counter >= randomLg) {
+        alert("You lose!!");
+        //start new game
+        startGame();
+      }
+
+    });
+
+    
+  
+
+  </script>
+</body>
+</html>
