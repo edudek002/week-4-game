@@ -22,7 +22,12 @@
   </div>
 
   <br>
-  <h2>Your total score is: <span id="total-number"></span></h2>>
+  <h2>Your total score is: <span id="total-number"></span></h2>
+  <br>
+  <h2>You won: <span id="wins"></span></h2>
+  <br>
+  <h2>You lost: <span id="losses"></span></h2>
+
 
   
 
@@ -43,11 +48,10 @@
     
     var Max=120;
     var Min=19;
-    var numberLg =Math.floor(Math.random() * (Max - Min + 1)) + Min
-
+    var numberLg =0
     var max=12;
     var min=1;
-    var numberSm =Math.floor(Math.random() * (max - min + 1)) + min;
+    var numberSm =[];
 
     var newGemsLg = new Gems(numberLg);
     newGemsLg.setRandomLg();
@@ -59,9 +63,9 @@
     newGemsImage.setGems();
 
 
-    console.log("HTML Random number = " + newGemsLg.numberLg);
+    console.log("Random large number in HTML= " + newGemsLg.numberLg);
 
-    console.log("HTML Random number = " + newGemsSm.numberSm);
+    console.log("Random small number in HTML= " + newGemsSm.numberSm);
 
 
   </script>

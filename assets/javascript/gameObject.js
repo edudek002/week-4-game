@@ -17,8 +17,11 @@ var Gems = function(number) {
     this.numberSm=numberSm;
     this.randomLg =[];
     this.randomSm =[0,0,0,0,];
+    this.counter =0;
+    //this.imageGem=imageGem;
+    this.gemValue=0;
 
- 
+    
 
   }
 
@@ -49,15 +52,20 @@ var Gems = function(number) {
     
     
   Gems.prototype.setGems = function() {
-    var imageGem=[];
-    for (var i = 0; i < randomSm.length; i++) {
-      imageGem[i] = $("<img>");
-      imageGem[i].addClass("gem-image");
-      var color = ["gemstoneBlue.jpg", "gemstoneGreen.jpg", "gemstoneRed.jpg", "gemstoneYellow.jpg"];
-      imageGem[i].attr("src", color[i]);
-      imageGem[i].attr("data-gemvalue", randomSm[i]);
-      $("#gems").append(imageGem[i]);
-    }
+
+
+        imageGem=[$("<img>"),$("<img>"),$("<img>"),$("<img>")];
+    
+    for (var i = 0; i <4; i++) {      
+
+        imageGem[i].addClass("gem-image");
+        var color = ["assets/images/gemstoneBlue.jpg", "assets/images/gemstoneGreen.jpg", "assets/images/gemstoneRed.jpg", "assets/images/gemstoneYellow.jpg"];
+        imageGem[i].attr("src", color[i]);
+        //imageGem[i].attr("data-gemvalue", randomSm[i]);
+        $("#gems").append(imageGem[i]);
+        //$("#gems").text(this.imageGem);
+
+    };
   }
   
 
