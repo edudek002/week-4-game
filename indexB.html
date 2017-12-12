@@ -41,14 +41,22 @@
     var randomLg =0;
     var min =1;
     var max =12;
-    var randomSm = [0,0,0,0];
+    var randomSm = [];
     var counter=0;
 
-    //create a gem
+    //Create a gem
     
     var imageGem=[$("<img>"),$("<img>"),$("<img>"),$("<img>")];
     
     var gemValue;
+
+    for (var i = 0; i <4; i++) {      
+
+        imageGem[i].addClass("gem-image");
+        var color = ["assets/images/gemstoneBlue.jpg", "assets/images/gemstoneGreen.jpg", "assets/images/gemstoneRed.jpg", "assets/images/gemstoneYellow.jpg"];
+        imageGem[i].attr("src", color[i]);
+
+      };
     
     
 
@@ -67,22 +75,30 @@
     function roundComplete() {  
 
       // create a small random number 1-12 for different crystals
-      //var randomSm = [0,0,0,0];
+      randomSm = [0,0,0,0];
+      gemValue =0;
+
+      console.log("random small reset " + randomSm[3]);
+      console.log("gemvalue = " + gemValue);
       
       for (var i = 0; i <4; i++) {
+
+
         randomSm[i] =Math.floor(Math.random() * (max - min + 1)) + min;
         console.log(randomSm[i]);
-        imageGem[i].addClass("gem-image");
-        var color = ["assets/images/gemstoneBlue.jpg", "assets/images/gemstoneGreen.jpg", "assets/images/gemstoneRed.jpg", "assets/images/gemstoneYellow.jpg"];
-        imageGem[i].attr("src", color[i]);
-     
+      
         imageGem[i].attr("data-gemvalue", randomSm[i]);
         $("#gems").append(imageGem[i]);
       };
 
+
+      //$.each(randomSm, function (index, value))
+
+
       $(".gem-image").on("click", function() {
 
         gemValue = ($(this).attr("data-gemvalue"));
+        console.log("After click gemvalue = " + gemValue);
         alert("you guessed: " + gemValue);
         gemValue = parseInt(gemValue);
         counter += gemValue;
@@ -93,15 +109,13 @@
           alert("You win!");
           //start new game
           startGame();
-        
-          //roundComplete();
+          roundComplete();
         }
         else if (counter >= randomLg) {
           alert("You lose!!");
           //start new game
           startGame();
-        
-          //roundComplete();
+          roundComplete();
         }
 
       });
