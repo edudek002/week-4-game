@@ -3,6 +3,8 @@
 <head>
   <title>simple crystal game</title>
   
+  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -10,18 +12,202 @@
 </head>
 <body>
 
-  <h1>Number to Guess: <span id="random-numberLg"></span></h1>
 
-  <!-- Note that this div is now empty. We will fill it dynamically -->
-  <div id="gems">
+
+  <div class="container">
+
+    <div class="row"> 
+
+        <!-- Main Section on the left-->
+    <div class="jumbotron text-center">
+      <h1 class="display4">WIN A GEM!!!</h1>
+      <p class="lead"><h2>Guess the number below for a chance to win a real gem!</h2></p>
+
+      
+    </div>
+
+
+      
+
+      <div class="col-md-8">
+
+        <div class="card card-body custom_border border-info mb-3">
+
+          <br>
+
+          <div id="gems">
+          </div>
+
+          <div class="gemPillow">
+            <img src="assets/images/gemPillow.jpg" alt="background picture" width="660" height="660">
+          </div> 
+
+        </div>
+
+      </div>
+  
+      <div class="col-md-4"> 
+
+        <div class="card card-body custom_border border-info mb-3">
+
+          <div class="row">
+
+            <h2>Number to Guess:  </h2> 
+
+          </div>
+
+          <div class="row card card-body text-center">
+            <br>
+            
+            <span id="random-numberLg" class="numberDisplay"></span>
+            <br>
+            <br>
+
+          </div>
+
+          <div class="row">
+
+            <h2>Your total score:  </h2> 
+
+          </div>
+
+          <div class="row card card-body text-center">
+
+            <br>
+            <span id="total-number" class="numberDisplay"></span>
+            <br>
+            <br>
+
+          </div>
+
+          <div class="row">
+
+
+            <br>
+            <h2>You won:   <span id="wins"></span> gems so far.</h2>
+            <br>
+            <br> 
+
+          </div>
+
+          <div class="row">
+
+            <br> 
+            <h2>You lost:   <span id="losses"> gems so far.</span></h2>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+ 
+
+    <div class="row card card-body text-center"> 
+      <br>
+      <h1>Congratulations! Your total win is :   <span id="wins"></span> gems!!</h1>
+      <br>
+      <br>
+    </div>
+
+
+            <!--
+            <div class="row justify-content-center">
+              <br>
+              <br>
+              <br>
+              <p class="card-text">Press any key to get started</p>
+            </div>
+
+
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <br>
+                <p class="card-text">Guess this word:</p>                
+              </div>
+
+              <div class="col-md-6 text-center">
+                <br>
+                <div id="numChar"></div> 
+              </div>
+            </div>
+
+
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <br>
+                <p class="card-text">Remaining guesses: </p> 
+              </div>
+
+              <div class="col-md-6 text-center">
+                <br>
+                <div id="demo"></div> 
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <br>
+                <br>
+                <p class="card-text">Your guesses so far: </p>
+              </div>
+
+              <div class="col-md-6 text-center">       
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <br>
+                <p class="card-text">Correct guesses: </p>
+              </div>
+
+              <div class="col-md-6 text-center">
+                <br>
+                <div id="corLetters"></div>        
+              </div>
+            </div>
+
+
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <br>
+                <p class="card-text">Incorrect guesses: </p>   
+              </div>
+
+              <div class="col-md-6 text-center">
+                <br>
+                <div id="incLetters"></div>
+              </div>
+            </div>
+
+
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <br>
+                <br>
+                <h4 class="card-text">Total Wins = </h4>
+                <br> 
+              </div>
+
+              <div class="col-md-6 text-center">
+                <br>
+                <br>
+                <div id="gamesWon"></div>
+              </div>
+            </div>   
+
+          </div>
+
+        </div>
+
+    </div>
+
+  -->
+
   </div>
 
-  <br>
-  <h2>Your total score is: <span id="total-number"></span></h2>
-  <br>
-  <h2>You won: <span id="wins"></span></h2>
-  <br>
-  <h2>You lost: <span id="losses"></span></h2>
+  
 
   
 

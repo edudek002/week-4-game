@@ -1,7 +1,58 @@
+.container{
+	color: navy;
+}
+
+.gem-image {
+	width: 120px;
+    height: 120px;
+
+    }
+
+    .jumbotron{
+		background: lightblue;
+		
+    	width: 100%;
+    }
 
 
-    .gem-image {
-      width: 100px;
-      height: 100px;
+    #gems{
+
+    	position: relative;
+    top: 300px;
+    left: 120px;
+    z-index: 1;
+
+
+    }
+
+    .gemPillow {
+
+    position: relative;
+    left: 10px;
+		
+    
+
+	}
+
+	/*#gameA {
+
+	position: relative;
+    	left: 200px;	
+
+  margin: 20px;
+  
+  font-size: 20px;
+  width: 30px;
+  height: 230px;
+  float: right;
+  z-index: 1;
+ }
+ */
+
+
+    .numberDisplay {
+
+     color: red;
+     font-size: 60px;
     }
   
