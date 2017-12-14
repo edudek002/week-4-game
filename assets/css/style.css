@@ -2,57 +2,34 @@
 	color: navy;
 }
 
+.jumbotron{
+	background: lightblue;	
+    width: 100%;
+}
+
 .gem-image {
 	width: 120px;
     height: 120px;
+}
 
-    }
+#gems{
 
-    .jumbotron{
-		background: lightblue;
-		
-    	width: 100%;
-    }
-
-
-    #gems{
-
-    	position: relative;
-    top: 300px;
+    position: absolute;
+    top: 200px;
     left: 120px;
     z-index: 1;
+}
 
-
-    }
-
-    .gemPillow {
+.gemPillow {
 
     position: relative;
+    top: 10px;
     left: 10px;
-		
-    
+}
 
-	}
+.numberDisplay {
 
-	/*#gameA {
-
-	position: relative;
-    	left: 200px;	
-
-  margin: 20px;
-  
-  font-size: 20px;
-  width: 30px;
-  height: 230px;
-  float: right;
-  z-index: 1;
- }
- */
-
-
-    .numberDisplay {
-
-     color: red;
-     font-size: 60px;
-    }
+    color: red;
+    font-size: 58px;
+}
   

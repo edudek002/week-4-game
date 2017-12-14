@@ -9,6 +9,7 @@ var randomSm = [];
 var counter=0;
 var win =0;
 var loss =0;
+var finalWin=0;
 var gemValue=0;
 
    
@@ -35,6 +36,9 @@ function startGame() {
   console.log("Random Large = " + randomLg);
   $("#random-numberLg").text(randomLg);
   $("#total-number").text(this.counter);
+  $("#wins").text(win);
+  $("#losses").text(loss);
+
 } 
 
 function roundComplete() {  
@@ -69,6 +73,13 @@ function registerEventListener() {
     alert("You win!");
     win++;
     $("#wins").text(win);
+    finalWin=win-loss;
+    if (finalWin>=0){
+      $("#finalWin").text(finalWin);
+    }
+    else {
+      $("#finalWin").text(0);
+    }
     //start new game
     startGame();
     roundComplete();
@@ -77,6 +88,13 @@ function registerEventListener() {
     alert("You lose!!");
     loss++; 
     $("#losses").text(loss);
+    finalWin=win-loss;
+    if (finalWin>=0){
+      $("#finalWin").text(finalWin);
+    }
+    else {
+      $("#finalWin").text(0);
+    }
     //start new game
     startGame();
     roundComplete();

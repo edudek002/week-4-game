@@ -1,73 +1,129 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>simple crystal game</title>
-  
-  <style type="text/css">
+  <head>
+    <title>Gem Game</title>
 
-    .crystal-image {
-      width: 100px;
-      height: 100px;
-    }
-  </style>
-
-
-</head>
-<body>
-
-  <h1>Number to Guess: <span id="random-numberLg"></span></h1>
-
-  <!-- Note that this div is now empty. We will fill it dynamically -->
-  <div id="gems">
-  </div>
-
-  <br>
-  <h2>Your total score is: <span id="total-number"></span></h2>
-  <br>
-  <h2>You won: <span id="wins"></span></h2>
-  <br>
-  <h2>You lost: <span id="losses"></span></h2>
-
-
-  
-
-
-  <!-- JAVASCRIPT  -->
-  <!-- ========================================= -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-  <script type="text/javascript" src="assets/javascript/gameObject.js"></script>
-
-  <script>
-
-  //needs to be updated for gems game  
-
-
-  
+    <link rel="stylesheet" type="text/css" href="reset/css/style.css">
     
-    var Max=120;
-    var Min=19;
-    var numberLg =0
-    var max=12;
-    var min=1;
-    var numberSm =[];
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-    var newGemsLg = new Gems(numberLg);
-    newGemsLg.setRandomLg();
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   
+  </head>
 
-    var newGemsSm = new Gems(numberSm);
-    newGemsSm.setRandomSm();
+  <body>
 
-    var newGemsImage = new Gems(imageGem);
-    newGemsImage.setGems();
+    <div class="container">
+
+      <div class="row"> 
+
+        <!-- Section on the left-->
+
+        <div class="jumbotron text-center">
+          <h1 class="display4">WIN A GEM!!!</h1>
+          <p class="lead"><h3>Guess the number on the right for a chance to win a real gem!</h3></p>
+          <p class="lead"><h3>Click on a gem below to learn the value and start the game.</h3></p> 
+        </div>
+
+        <!-- Gems are displayed here-->
+
+        <div class="col-md-8">
+
+          <div class="card card-body border-info mb-3">
+
+            <div id="gems"></div>
+
+            <div class="gemPillow"> 
+              <img src="assets/images/gemPillow.jpg" alt="background picture" width="660" height="660">
+            </div> 
+
+          </div>
+
+        </div>
+
+        <!-- Section on the righr-->
+    
+        <div class="col-md-4"> 
+
+          <div class="card card-body border-info mb-3">
+
+            <!-- Here number to be guessed is displayed-->
+
+            <div class="row">
+              <h2>Number to Guess:  </h2> 
+            </div>
+
+            <div class="row card card-body text-center">
+              <br>
+              <span id="random-numberLg" class="numberDisplay"></span>
+              <br>
+              <br>
+            </div>
+
+            <!-- Here user's score is displayes-->
+
+            <div class="row">
+              <h2>Your total score:  </h2> 
+            </div>
+
+            <div class="row card card-body text-center">
+              <br>
+              <span id="total-number" class="numberDisplay"></span>
+              <br>
+              <br>
+            </div>
+
+            <div class="row">
+              <br> 
+            </div>
 
 
-    console.log("Random large number in HTML= " + newGemsLg.numberLg);
+            <!-- Number of wins are displayed here-->
 
-    console.log("Random small number in HTML= " + newGemsSm.numberSm);
+            <div class="row">
+              <br>   
+              <h2> You won: <span id="wins"></span> gems</h2> 
+            </div>
 
+            <div class="row">
+              <br>
+            </div>
 
-  </script>
-</body>
+            <!-- Number of losses are displayed here-->
+
+            <div class="row">
+              <br> 
+              <h2>You lost:  <span id="losses"></span> gems</h2>
+            </div>
+
+            <div class="row">
+              <br> 
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+   
+      <!--Final number of wins (wins - losses) are displayed here-->
+
+      <div class="row card card-body border-info mb-3 text-center"> 
+        <br>
+        <h1>Congratulations! Your total win is :   <span id="finalWin" class="numberDisplay"></span> gems!</h1>
+        <br>
+      </div>
+
+    </div>
+
+    <!-- JAVASCRIPT  -->
+    <!-- ========================================= -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    
+  </body>
+
 </html>
